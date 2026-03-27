@@ -56,5 +56,6 @@ def checkhealth():
 
 if __name__ == '__main__':
     init_file()
-    # Run on port 5000, accessible to the network
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Render provides a PORT environment variable
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
